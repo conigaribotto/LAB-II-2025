@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Artesanos.com</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+
+  <!-- Encabezado -->
+  <header class="main-header">
+    <div class="logo">Artesanos.com</div>
+
+    <form class="search-bar" role="search">
+      <input type="search" id="search-bar" placeholder="Buscar usuarios, álbumes o etiquetas...">
+      <button type="submit" id="search-button">🔍</button>
+    </form>
+
+    <nav class="auth-links">
+      <button onclick="window.location.href='/login.html'">Iniciar Sesión</button>
+      <button onclick="window.location.href='/register.html'">Crear Usuario</button>
+    </nav>
+  </header>
+
+  <!-- Bienvenida -->
+  <main>
+    <section id="welcome">
+      <h1 class="welcome-title">Bienvenido a Artesanos.com</h1>
+      <p class="subtitle">Conectá con artistas y compartí tus creaciones.</p>
+    </section>
+
+    <!-- Publicaciones -->
+    <section id="popular-posts">
+      <h2>Publicaciones Más Populares</h2>
+      <div class="feed">
+        <article class="post">
+          </div>
+        </article>
+        <!-- Más publicaciones serán agregadas dinámicamente aquí -->
+      </div>una api
+    </section>
+  </main>
+
+  <!-- Scripts -->
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>

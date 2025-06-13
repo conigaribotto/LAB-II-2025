@@ -1,0 +1,202 @@
+:root {
+  --primary: #4a90e2;
+  --primary-dark: #357ab8;
+  --bg: #f0f8ff;
+  --white: #ffffff;
+  --gray: #2c3e50;
+  --light-gray: #cbd6e2;
+  --card-shadow: rgba(0, 0, 0, 0.1);
+  --btn-gradient: linear-gradient(135deg, #4a90e2, #6fb1fc);
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  background-color: var(--bg);
+}
+
+/* Header */
+header {
+  background-color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 30px;
+  box-shadow: 0 2px 6px var(--card-shadow);
+}
+
+.logo {
+  font-size: 1.7rem;
+  font-weight: bold;
+  color: var(--primary-dark);
+}
+
+.search-bar {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.search-bar input {
+  width: 50%;
+  padding: 10px;
+  border: 1px solid var(--light-gray);
+  border-radius: 5px 0 0 5px;
+  font-size: 1rem;
+}
+
+.search-bar button {
+  padding: 10px 15px;
+  border: none;
+  background: var(--btn-gradient);
+  color: white;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+/* Botones de login y registro */
+.auth-links button {
+  margin-left: 10px;
+  background: var(--btn-gradient);
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.auth-links button:hover {
+  background: var(--primary-dark);
+}
+
+/* Página principal */
+main {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.welcome-title {
+  font-size: 2.8rem;
+  color: var(--gray);
+  margin-bottom: 15px;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: var(--primary-dark);
+  margin-bottom: 40px;
+}
+
+/* Publicaciones */
+.feed {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.post {
+  background: var(--white);
+  width: 280px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px var(--card-shadow);
+  padding: 15px;
+  text-align: left;
+}
+
+.post img {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.post h3 {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  color: var(--primary-dark);
+}
+
+.post p {
+  font-size: 0.95rem;
+  color: var(--gray);
+}
+
+.comments ul {
+  padding-left: 18px;
+}
+
+/* Formularios de login y registro */
+.auth-container {
+  background-color: var(--white);
+  max-width: 400px;
+  margin: 80px auto;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px var(--card-shadow);
+  text-align: center;
+}
+
+.auth-container h2 {
+  color: var(--primary-dark);
+  margin-bottom: 20px;
+}
+
+.auth-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.auth-container label {
+  text-align: left;
+  font-weight: 500;
+  color: var(--gray);
+}
+
+.auth-container input {
+  padding: 10px;
+  border: 1px solid var(--light-gray);
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.auth-container button {
+  background: var(--btn-gradient);
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.auth-container button:hover {
+  background: var(--primary-dark);
+}
+
+.auth-container a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.auth-container a:hover {
+  text-decoration: underline;
+}
+
+.auth-container p {
+  margin-top: 10px;
+}
+#login-message {
+  margin-top: 15px;
+  font-weight: bold;
+  font-size: 1rem;
+}
+#register-message {
+  margin-top: 15px;
+  font-weight: bold;
+  font-size: 1rem;
+}
