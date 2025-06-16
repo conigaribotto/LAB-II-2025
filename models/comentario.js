@@ -8,6 +8,6 @@ const Comentario = sequelize.define('comentarios', {
 });
 
 Comentario.belongsTo(Imagen, { foreignKey: 'imagen_id' });
-Comentario.belongsTo(Usuario, { foreignKey: 'usuario_id', as: 'usuario' }); // 💥 Este `as` debe coincidir con el include
+Comentario.belongsTo(Usuario, { foreignKey: 'usuario_id', as: 'usuario' });
 
 module.exports = Comentario;

@@ -1,6 +1,3 @@
-// =====================
-// 📁 controllers/usuarioController.js
-// =====================
 
 const Usuario = require('../models/Usuario');
 

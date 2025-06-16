@@ -1,4 +1,3 @@
-// controllers/imagenController.js
 const path = require('path');
 const Album = require('../models/Album');
 const Imagen = require('../models/Imagen');

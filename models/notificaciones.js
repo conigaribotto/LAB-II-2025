@@ -1,4 +1,3 @@
-// public/js/notificaciones.js
 
 const socket = io();
 const panel = document.getElementById('notificationPanel');
