@@ -13,6 +13,7 @@ body {
   font-family: 'Segoe UI', sans-serif;
   margin: 0;
   background-color: var(--bg);
+  color: var(--gray);
 }
 
 /* Header */
@@ -90,48 +91,208 @@ main {
   margin-bottom: 40px;
 }
 
-/* Publicaciones */
-.feed {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-}
-
-.post {
-  background: var(--white);
-  width: 280px;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px var(--card-shadow);
-  padding: 15px;
-  text-align: left;
-}
-
-.post img {
-  width: 100%;
-  border-radius: 8px;
+/* Perfil del usuario */
+.perfil-avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
   object-fit: cover;
+  box-shadow: 0 2px 6px var(--card-shadow);
+  margin: 15px auto;
+  display: block;
 }
 
-.post h3 {
-  font-size: 1.2rem;
-  margin-top: 10px;
+.perfil-header {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.perfil-info-columns {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.col-izquierda, .col-derecha {
+  flex: 1;
+  min-width: 300px;
+  padding: 10px;
+}
+
+/* Publicaciones del perfil */
+.publicaciones {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 30px;
+  padding-bottom: 50px;
+}
+
+.publicacion-card {
+  background: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px var(--card-shadow);
+  padding: 25px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.publicacion-card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+
+.publicacion-card p {
+  font-size: 1.1rem;
+  color: var(--gray);
+  margin: 0;
+}
+
+/* Comentarios */
+.comentarios {
+  margin-top: 18px;
+}
+
+.comentarios h4 {
+  margin-bottom: 8px;
   color: var(--primary-dark);
+  font-size: 1.1rem;
 }
 
-.post p {
+.comentarios-lista p {
+  margin: 5px 0;
   font-size: 0.95rem;
+  color: #444;
+}
+
+.comentarios form {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.comentarios input[type="text"] {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid var(--light-gray);
+  border-radius: 4px;
+  font-size: 0.95rem;
+}
+
+.comentarios button {
+  padding: 8px 12px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+/* Resultado de búsqueda de perfil */
+.resultado-perfil {
+  background: var(--white);
+  padding: 20px;
+  margin: 30px auto;
+  max-width: 500px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px var(--card-shadow);
+  text-align: center;
+}
+
+.resultado-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 6px var(--card-shadow);
+}
+
+.resultado-nombre {
+  font-size: 1.4rem;
+  color: var(--primary-dark);
+  margin: 5px 0;
+}
+
+.resultado-email,
+.resultado-intereses,
+.resultado-bio {
+  font-size: 1rem;
+  margin: 4px 0;
   color: var(--gray);
 }
 
-.comments ul {
-  padding-left: 18px;
+/* Resultado de búsqueda de publicación */
+.resultado-publicacion {
+  background: var(--white);
+  padding: 15px;
+  margin: 15px auto 30px auto;
+  max-width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px var(--card-shadow);
+}
+
+.resultado-publicacion img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.resultado-caption {
+  font-size: 1rem;
+  color: var(--gray);
+}
+
+/* Formulario de perfil */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--gray);
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid var(--light-gray);
+  border-radius: 6px;
+  background: #fefefe;
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* Botones generales */
+button[type="submit"],
+button {
+  background: var(--btn-gradient);
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+button:hover {
+  background: var(--primary-dark);
 }
 
 /* Formularios de login y registro */
 .auth-container {
   background-color: var(--white);
-  max-width: 400px;
+  max-width: 450px;
   margin: 80px auto;
   padding: 40px;
   border-radius: 10px;
@@ -141,7 +302,8 @@ main {
 
 .auth-container h2 {
   color: var(--primary-dark);
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  font-size: 1.8rem;
 }
 
 .auth-container form {
@@ -150,16 +312,10 @@ main {
   gap: 15px;
 }
 
-.auth-container label {
-  text-align: left;
-  font-weight: 500;
-  color: var(--gray);
-}
-
 .auth-container input {
-  padding: 10px;
+  padding: 12px;
   border: 1px solid var(--light-gray);
-  border-radius: 5px;
+  border-radius: 6px;
   font-size: 1rem;
 }
 
@@ -169,13 +325,18 @@ main {
   border: none;
   padding: 12px;
   border-radius: 6px;
-  cursor: pointer;
+  font-size: 1rem;
   font-weight: bold;
-  transition: background 0.3s ease;
+  cursor: pointer;
 }
 
 .auth-container button:hover {
   background: var(--primary-dark);
+}
+
+.auth-container p {
+  margin-top: 15px;
+  font-size: 0.95rem;
 }
 
 .auth-container a {
@@ -187,16 +348,9 @@ main {
   text-decoration: underline;
 }
 
-.auth-container p {
-  margin-top: 10px;
-}
-#login-message {
-  margin-top: 15px;
-  font-weight: bold;
-  font-size: 1rem;
-}
+#login-message,
 #register-message {
-  margin-top: 15px;
+  margin-top: 10px;
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 0.95rem;
 }

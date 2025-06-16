@@ -12,15 +12,24 @@
   <header class="main-header">
     <div class="logo">Artesanos.com</div>
 
-    <form class="search-bar" role="search">
-      <input type="search" id="search-bar" placeholder="Buscar usuarios, álbumes o etiquetas...">
+    <form class="search-bar" id="form-busqueda">
+      <input type="search" id="search-bar" placeholder="Buscar usuarios por nombre o email..." required>
       <button type="submit" id="search-button">🔍</button>
     </form>
 
-    <nav class="auth-links">
+    <!-- Botones de autenticación -->
+    <nav class="auth-links" id="auth-buttons">
       <button onclick="window.location.href='/login.html'">Iniciar Sesión</button>
       <button onclick="window.location.href='/register.html'">Crear Usuario</button>
     </nav>
+
+    <!-- Sesión activa -->
+    <div class="user-session" id="user-session" style="display: none; align-items: center; gap: 10px;">
+      <img id="user-avatar" src="/uploads/default.jpg" class="perfil-avatar" style="width:40px; height:40px; border-radius:50%; object-fit:cover;">
+      <span id="user-nombre"></span>
+      <button onclick="window.location.href='/perfil.html'">Mi perfil</button>
+      <button onclick="cerrarSesion()">Cerrar sesión</button>
+    </div>
   </header>
 
   <!-- Bienvenida -->
@@ -30,20 +39,13 @@
       <p class="subtitle">Conectá con artistas y compartí tus creaciones.</p>
     </section>
 
-    <!-- Publicaciones -->
-    <section id="popular-posts">
-      <h2>Publicaciones Más Populares</h2>
-      <div class="feed">
-        <article class="post">
-          </div>
-        </article>
-        <!-- Más publicaciones serán agregadas dinámicamente aquí -->
-      </div>una api
+    <!-- Resultados de búsqueda -->
+    <section id="resultados">
+      <!-- Aquí se renderizan perfiles dinámicamente -->
     </section>
   </main>
 
-  <!-- Scripts -->
-  <script src="/socket.io/socket.io.js"></script>
-  <script src="/app.js"></script>
+  <!-- JS externo -->
+  <script src="index.js"></script>
 </body>
 </html>
