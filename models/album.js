@@ -1,6 +1,6 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/db');
-const Usuario = require('./Usuario');
+const Usuario = require('./usuario');
 
 const Album = sequelize.define('albumes', {
   titulo: DataTypes.STRING
