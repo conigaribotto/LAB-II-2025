@@ -1,7 +1,7 @@
 const path = require('path');
-const Album = require('../models/Album');
-const Imagen = require('../models/Imagen');
-const Usuario = require('../models/Usuario');
+const Album = require('../models/album');
+const Imagen = require('../models/imagen');
+const Usuario = require('../models/usuario');
 
 // Publicar una nueva imagen
 exports.subirImagen = async (req, res) => {
