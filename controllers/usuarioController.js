@@ -1,5 +1,5 @@
 
-const Usuario = require('../models/Usuario');
+const Usuario = require('../models/usuario');
 
 exports.registrar = async (req, res) => {
   try {
