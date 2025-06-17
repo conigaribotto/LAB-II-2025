@@ -1,6 +1,7 @@
 // =======================
 // DEPENDENCIAS
 // =======================
+require('dotenv').config();
 const express = require('express');
 const path = require('path');
 const http = require('http');
@@ -13,7 +14,7 @@ const sequelize = require('./config/db');
 const app = express();
 const server = http.createServer(app);
 const io = new Server(server);
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // =======================
 // SOCKET.IO (CONFIGURACIÓN)
@@ -26,7 +27,13 @@ configurarSockets(io); // 👈 Inicializa la lógica de sockets
 // =======================
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
+
+// =======================
+// MOTOR DE PLANTILLAS (PUG) (opcional)
+// =======================
+// app.set('view engine', 'pug');
+// app.set('views', path.join(__dirname, 'views'));
 
 // =======================
 // RUTAS ESTÁTICAS (HTML)
@@ -51,7 +58,13 @@ app.use(amistadRoutes);
 // =======================
 // INICIAR SERVIDOR
 // =======================
-sequelize.sync({ alter: true }).then(() => {
-  console.log('📦 Base de datos sincronizada');
-  server.listen(PORT, () => console.log(`🚀 Servidor corriendo en http://localhost:${PORT}`));
-}).catch(err => console.error('❌ Error en sincronización:', err));
+sequelize.sync({ alter: true })
+  .then(() => {
+    console.log('📦 Base de datos sincronizada');
+    server.listen(PORT, () => {
+      console.log(`🚀 Servidor corriendo en http://localhost:${PORT}`);
+    });
+  })
+  .catch(err => {
+    console.error('❌ Error en sincronización:', err);
+  });

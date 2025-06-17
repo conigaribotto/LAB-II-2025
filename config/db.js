@@ -13,8 +13,6 @@ const sequelize = new Sequelize(
   }
 );
 
-
-// Probar conexión
 sequelize.authenticate()
   .then(() => console.log('✅ Conexión a la base de datos exitosa'))
   .catch(err => console.error('❌ Error de conexión:', err));
