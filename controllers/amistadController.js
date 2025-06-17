@@ -10,10 +10,10 @@ exports.enviarSolicitud = async (req, res) => {
       { replacements: [de_usuario_id, para_usuario_id] }
     );
 
-    res.status(201).send('Solicitud enviada');
+    res.status(201).json({ message: 'Solicitud enviada' });
   } catch (error) {
     console.error('❌ Error al enviar solicitud:', error);
-    res.status(500).send('Error al enviar solicitud');
+    res.status(500).json({ error: 'Error al enviar solicitud' });
   }
 };
 
@@ -26,10 +26,10 @@ exports.responderSolicitud = async (req, res) => {
       replacements: [estado, id]
     });
 
-    res.send(`Solicitud ${estado}`);
+    res.json({ message: `Solicitud ${estado}` });
   } catch (error) {
     console.error('❌ Error al responder solicitud:', error);
-    res.status(500).send('Error al responder solicitud');
+    res.status(500).json({ error: 'Error al responder solicitud' });
   }
 };
 
@@ -49,7 +49,7 @@ exports.obtenerPendientes = async (req, res) => {
     res.json(solicitudes);
   } catch (error) {
     console.error('❌ Error al obtener solicitudes pendientes:', error);
-    res.status(500).send('Error al obtener solicitudes pendientes');
+    res.status(500).json({ error: 'Error al obtener solicitudes pendientes' });
   }
 };
 
@@ -73,6 +73,6 @@ exports.obtenerAmigos = async (req, res) => {
     res.json(amigos);
   } catch (error) {
     console.error('❌ Error al obtener amigos:', error);
-    res.status(500).send('Error al obtener amigos');
+    res.status(500).json({ error: 'Error al obtener amigos' });
   }
 };
