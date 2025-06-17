@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/db');
-const Album = require('./Album');
-const Usuario = require('./Usuario');
+const Album = require('./album');
+const Usuario = require('./usuario');
 
 const Imagen = sequelize.define('imagenes', {
   ruta: DataTypes.STRING,
